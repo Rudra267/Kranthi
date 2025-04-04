@@ -3825,7 +3825,7 @@ footer.main-footer{
 }
 
 .footer-social-links ul li a{
-	color: var(--accent-color);
+	color: #fff;
 }
 
 .footer-links{
