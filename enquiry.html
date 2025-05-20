@@ -354,9 +354,9 @@
 									<div class="form-group col-md-6 mb-4">
 										<label for="req" >Energy Requirement</label>
 										<select name="Energy Requirement" class="form-control"  id="req" required>
-											<option value="Solar Water Heater">Residential</option>
-											<option value="Solar Security Fencing">Commercial</option>
-											<option value="Solar On-Grid Systems">Industrial</option>
+											<option value="Residential">Residential</option>
+											<option value="Commercial">Commercial</option>
+											<option value="Industrial">Industrial</option>
 										</select>
 
 										<div class="help-block with-errors"></div>
@@ -368,8 +368,8 @@
 										<div class="help-block with-errors"></div>
 									</div>
 									<div class="col-md-12 text-center">
-										<button type="submit" class="btn-default">Submit Now</button>
-										<div id="msgSubmit" class="h3 text-left hidden"></div>
+										<div onclick="sendEmail()" type="submit" class="btn-default">Submit Now</div>
+										<!-- <div id="msgSubmit" class="h3 text-left hidden"></div> -->
 									</div>
 								</div>
 							</form>
@@ -584,6 +584,25 @@
       <!-- Copyright Footer End -->
     </footer>
     <!-- Footer End -->
+
+    <!-- <script>
+  document.getElementById("enquireForm").addEventListener("submit", function(event) {
+    event.preventDefault(); 
+    sendEmail();
+});
+</script> -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function(){
+       emailjs.init({
+         publicKey: "wHoJ4Ei5XycDcuQ3i",
+       });
+    })();
+ </script>
+ <script src="./js/email.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 	<!-- Jquery Library File -->
 	<script src="js/jquery-3.7.1.min.js"></script>
