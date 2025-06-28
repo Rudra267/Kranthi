@@ -49,6 +49,111 @@
     <![endif]-->
 </head>
 
+<style>
+.contact-section {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-header .subheading {
+  color: #c62828;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.contact-header .heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-top: 5px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-row input {
+  flex: 1;
+  min-width: 250px;
+  padding: 15px;
+  background: #ede9e9;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+textarea {
+  padding: 15px;
+  background: #ede9e9;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 120px;
+  width: 100%;
+}
+
+button {
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  align-self: center;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #b71c1c;
+}
+
+/* New dropdown styles */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 250px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 5px;
+  padding-left: 5px;
+}
+
+.form-group select {
+  padding: 15px;
+  background: #ede9e9;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  appearance: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+</style>
+
 <body class="tt-magic-cursor">
 
 	<!-- Preloader Start -->
@@ -308,76 +413,43 @@
 	<div class="google-map-form">
 
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 offset-lg-12 px-5">
-					<div class="contact-form-box text-center">
-						<!-- Section Title Start -->
-						<div class="section-title">
-							<h3 class="wow fadeInUp">Connect With Us</h3>
-							<h2 class="text-anime">Get In Touch With Us</h2>
-						</div>
-						<!-- Section Title End -->
-
-						<!-- Contact Form start -->
-						<div class="contact-form wow fadeInUp" data-wow-delay="0.75s">
-							<form id="contactForm" action="#" method="POST" data-toggle="validator">
-								<div class="row">
-									<div class="form-group col-md-6 mb-4">
-										<input type="text" name="name" class="form-control" id="name" placeholder="Name" required >
-										<div class="help-block with-errors"></div>
-									</div>
-
-									<div class="form-group col-md-6 mb-4">
-										<input type="email" name ="email" class="form-control" id="email" placeholder="Email" required >
-										<div class="help-block with-errors"></div>
-									</div>
-
-									<div class="form-group col-md-6 mb-4">
-										<input type="text" name="phone" class="form-control" id="phone" placeholder="Phone" required >
-										<div class="help-block with-errors"></div>
-									</div>
-									<div class="form-group col-md-6 mb-4">
-										<textarea name="msg" class="form-control" id="add" rows="1" placeholder="Address" required></textarea>
-										<div class="help-block with-errors"></div>
-									</div>
-									<div class="form-group col-md-6 mb-4">
-										<label for="product">Product of Interest</label>
-										<select name="Product" class="form-control" id="product" required>
-											<option value="Solar Water Heater">Solar Water Heater</option>
+  <section class="contact-section">
+    <div class="contact-header">
+      <p class="subheading">CONNECT WITH US</p>
+      <h2 class="heading">Get In Touch With Us</h2>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <input type="text" placeholder="Name" id="name" />
+        <input type="email" placeholder="Email" id="email"/>
+      </div>
+      <div class="form-row">
+        <input type="text" placeholder="Phone" id="phone" />
+        <input type="text" placeholder="Address" id="add" />
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Product of Interest</label>
+          <select  id="product">
+<option value="Solar Water Heater">Solar Water Heater</option>
 											<option value="Solar Security Fencing">Solar Security Fencing</option>
 											<option value="Solar On-Grid Systems">Solar On-Grid Systems</option>
 											<option value="Solar Lighting">Solar Lighting</option>
-										</select>
-
-										<div class="help-block with-errors"></div>
-									</div>
-									<div class="form-group col-md-6 mb-4">
-										<label for="req" >Energy Requirement</label>
-										<select name="Energy Requirement" class="form-control"  id="req" required>
-											<option value="Residential">Residential</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Energy Requirement</label>
+          <select id="req">
+			<option value="Residential">Residential</option>
 											<option value="Commercial">Commercial</option>
 											<option value="Industrial">Industrial</option>
-										</select>
-
-										<div class="help-block with-errors"></div>
-									</div>
-									
-
-									<div class="form-group col-md-12 mb-4">
-										<textarea name="msg" class="form-control" id="msg" rows="4" placeholder="Message"></textarea>
-										<div class="help-block with-errors"></div>
-									</div>
-									<div class="col-md-12 text-center">
-										<div onclick="sendEmail()" type="submit" class="btn-default">Submit Now</div>
-										<!-- <div id="msgSubmit" class="h3 text-left hidden"></div> -->
-									</div>
-								</div>
-							</form>
-						</div>
-						<!-- Contact Form end -->
-					</div>
-				</div>
-			</div>
+          </select>
+        </div>
+      </div>
+      <textarea id="msg" placeholder="Message"></textarea>
+      <button type="submit" onclick="sendEmail()">Submit Now</button>
+    </form>
+  </section>
 		</div>
 	</div>
 	<!-- Google Map & Contact Form Section End -->
